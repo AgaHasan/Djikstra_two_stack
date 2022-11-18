@@ -39,6 +39,7 @@ public class App
                     else if(simbol.equals("+") || simbol.equals("*") || simbol.equals("-") || simbol.equals("/") || simbol.equals("sqrt")){
                         operatora ++;
                     }
+                    else throw new RuntimeException("Ilegalan izraz");
                 }
                 if(otvorenihZagrada != zatvorenihZagrada || otvorenihZagrada != operatora) throw new RuntimeException("Ilegalan izraz");
                 Double rezultat = ExpressionEvaluator.evaluate(arg);
