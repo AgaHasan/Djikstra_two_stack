@@ -11,11 +11,12 @@ public class App
         try {
             if (args.length == 0) throw new RuntimeException("Nijedan argument nije primljen");
             int operatora = 0;
+            int operanada = 0;
             int otvorenihZagrada = 0;
             int zatvorenihZagrada = 0;
-            boolean bio_razmak = true;
 
             for(String arg : args){
+
                 operatora = 0;
                 otvorenihZagrada = 0;
                 zatvorenihZagrada = 0;
@@ -23,13 +24,19 @@ public class App
                 String[] simboli = arg.split(" ");
                 for(String simbol : simboli){
                     if(simbol.equals("(")){
-                        otvorenihZagrada++;
+                        otvorenihZagrada ++;
                     }
                     else if(simbol.equals(")")){
-                        zatvorenihZagrada++;
+                        zatvorenihZagrada ++;
                     }
-                    //else if(simbol)
+                    else if(StringIsNumberEvaluator.isNumber(simbol) == true){
+                        operanada ++;
+                    }
+                    else if(simbol.equals("+") || simbol.equals("*") || simbol.equals("-") || simbol.equals("/") || simbol.equals("sqrt")){
+                        operatora ++;
+                    }
                 }
+                if(otvorenihZagrada != zatvorenihZagrada || otvorenihZagrada != operatora) throw new RuntimeException("Ilegalan izraz");
 
             }
         }
