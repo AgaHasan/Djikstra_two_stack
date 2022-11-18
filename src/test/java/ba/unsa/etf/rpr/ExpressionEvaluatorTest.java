@@ -20,11 +20,38 @@ public class ExpressionEvaluatorTest
     }
 
     /**
-     * Drugi primjer iz zadatka // ( 1 + ( 5 * 20 ) )
+     * Test za Drugi primjer iz zadatka // ( 1 + ( 5 * 20 ) )
      */
     @Test
     public void primjerIzZadatka2() {
         Double x = ExpressionEvaluator.evaluate("( 1 + ( 5 * 20 ) )");
         assertEquals((Double)101.,(Double)x);
+    }
+
+    /**
+     * Test sa sqrt
+     */
+    @Test
+    public void korjenovanje() {
+        Double x = ExpressionEvaluator.evaluate("( sqrt ( 5 * 20 ) )");
+        assertEquals((Double)10.,(Double)x);
+    }
+
+    /**
+     * Test sa dijeljenjem
+     */
+    @Test
+    public void dijeljenje() {
+        Double x = ExpressionEvaluator.evaluate("( 1 + ( 5 / 5 ) )");
+        assertEquals((Double)2.,(Double)x);
+    }
+
+    /**
+     * Test sa negativnim rezultatom
+     */
+    @Test
+    public void negativni() {
+        Double x = ExpressionEvaluator.evaluate("( 1 - ( 5 * 20 ) )");
+        assertEquals((Double)(-99.),(Double)x);
     }
 }
