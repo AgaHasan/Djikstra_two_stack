@@ -16,7 +16,7 @@ public class App
             int zatvorenihZagrada = 0;
 
             for(String arg : args){
-
+                operanada = 0;
                 operatora = 0;
                 otvorenihZagrada = 0;
                 zatvorenihZagrada = 0;
@@ -37,7 +37,8 @@ public class App
                     }
                 }
                 if(otvorenihZagrada != zatvorenihZagrada || otvorenihZagrada != operatora) throw new RuntimeException("Ilegalan izraz");
-
+                Double rezultat = ExpressionEvaluator.evaluate(arg);
+                System.out.println("Rezultat je : " + rezultat);
             }
         }
         catch(RuntimeException e){

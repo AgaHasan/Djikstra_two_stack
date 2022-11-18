@@ -9,7 +9,7 @@ public class ExpressionEvaluator {
      * @param expression the expression to be evaluated in the form of a String object
      * @return The value of the expression after evaluation as Double
      */
-    public Double evaluate(String expression){
+    public static Double evaluate(String expression){
         Double result = 0.;
         return result;
     }
