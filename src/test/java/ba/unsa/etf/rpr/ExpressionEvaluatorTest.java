@@ -11,12 +11,20 @@ import org.junit.Test;
 public class ExpressionEvaluatorTest
 {
     /**
-     * Prvi unit test je primjer iz zadatka
+     * Prvi unit test je primjer iz zadatka // ( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )
      */
     @Test
-    public void primjerIzZadatka()
-    {
+    public void primjerIzZadatka() {
         Double x = ExpressionEvaluator.evaluate("( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )");
+        assertEquals((Double)101.,(Double)x);
+    }
+
+    /**
+     * Drugi primjer iz zadatka // ( 1 + ( 5 * 20 ) )
+     */
+    @Test
+    public void primjerIzZadatka2() {
+        Double x = ExpressionEvaluator.evaluate("( 1 + ( 5 * 20 ) )");
         assertEquals((Double)101.,(Double)x);
     }
 }
