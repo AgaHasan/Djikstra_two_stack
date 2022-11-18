@@ -6,6 +6,10 @@ package ba.unsa.etf.rpr;
  */
 public class App 
 {
+    /**
+     * Main - ulazna metoda konzolne aplikacije koja implementira djikstrin algoritam pomocu dva steka
+     * @param args prima niz argumenata koji su aritmeticki izrazi
+     */
     public static void main( String[] args )
     {
         try {
