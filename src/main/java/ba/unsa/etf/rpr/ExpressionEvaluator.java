@@ -7,7 +7,7 @@ import java.util.Stack;
  */
 public class ExpressionEvaluator {
     /**
-     * Metoda koja prima aritmeticki izraz te vraca njegovu izracunatu vrijednost
+     * Metoda koja prima aritmeticki izraz te vraca njegovu izracunatu vrijednost koju evaluira uz pomoc djikstrinog algoritma implementiranog pomocu dva steka
      * @param expression the expression to be evaluated in the form of a String object
      * @return The value of the expression after evaluation as Double
      */
