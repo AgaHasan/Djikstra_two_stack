@@ -30,7 +30,10 @@ public class ExpressionEvaluator {
                 if(operator.equals("+")) v = operandi.pop() + v;
                 if(operator.equals("-")) v = operandi.pop() - v;
                 if(operator.equals("*")) v = operandi.pop() * v;
-                if(operator.equals("/")) v = operandi.pop() / v;
+                if(operator.equals("/")){
+                    if(v == 0) throw new RuntimeException("Nije dozvoljeno dijeljenje sa nulom");
+                    v = operandi.pop() / v;
+                }
                 if(operator.equals("sqrt")) v = Math.sqrt(v);
                 operandi.push(v);
             }
