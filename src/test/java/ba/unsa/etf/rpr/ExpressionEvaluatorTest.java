@@ -1,9 +1,7 @@
 package ba.unsa.etf.rpr;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit testovi za nasu aplikaciju.
@@ -53,5 +51,17 @@ public class ExpressionEvaluatorTest
     public void negativni() {
         Double x = ExpressionEvaluator.evaluate("( 1 - ( 5 * 20 ) )");
         assertEquals((Double)(-99.),(Double)x);
+    }
+
+    /**
+     * Testiramo da li algoritam baca gresku kod dijeljenja nulom
+     */
+    @Test
+    public void dijeljenjeNulom() {
+        RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+            ExpressionEvaluator.evaluate("( 1 / 0 )");
+        });
+
+        assertEquals("Nije dozvoljeno dijeljenje sa nulom", thrown.getMessage());
     }
 }
